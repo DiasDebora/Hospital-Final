@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+     <ui:composition template="template.xhtml">
+        <ui:define name="body">
+     <h:head>
+        <title>Hospital Veterinário</title>
+        <h:outputScript name="js/script.js"/>
+        <h:outputStylesheet name="css/estilo.css"/>
+        
+    </h:head>
+    <h:body>
+        <h:panelGrid style="width: 100%">
+            Consulta
+
+            <h:panelGrid style="width: 100%; text-align: right;">
+                <h:form id="formVoltar" >                   
+                    <p:commandLink styleClass="botaoLink"  action="menu" value="Voltar ao menu" />
+                </h:form>
+            </h:panelGrid>
+        
+        <h:form >
+             <h:panelGrid columns="2">
+             <h:outputLabel for="data" value="Data"/>
+             <p:calendar id="dataInicio" pattern="dd/MM/yyyy"
+                         value="#{novaConsultaControle.consulta.data}"
+                         required="true" requiredMessage="Data início obrigatória"
+                         showOn="button"
+                         locale="pt"/>
+             
+             <h:outputLabel value="detalhes: "/>
+             <p:inputText value="#{novaConsultaControle.consulta.detalhes}"/>
+             </h:panelGrid>
+        
+        <p:selectOneMenu id="comboTutor" converter="tutorConverter" 
+                                 required="true" requiredMessage="Selecione um tutor"  
+                                 value="#{novaConsultaControle.tutor}" >
+                    <f:selectItem itemValue="#{null}" itemLabel="Escolha um tutor" 
+                                  noSelectionOption="false"/>
+                    <f:selectItems value="#{novaConsultaControle.listaTutores}" 
+                          
+                                   var="tut"
+                                   itemValue="#{tut}"
+                                   itemLabel="#{tut.nome}"/>
+                    
+                    
+                     <p:ajax listener = "#{novaConsultaControle.atualizar()}" 
+                    update="comboAnimais"/>
+                     
+                     </p:selectOneMenu>             
+            
+             <p:selectOneMenu id="comboAnimais" converter="animalConverter" 
+                               required="true" requiredMessage="Selecione um animal"  
+                               value="#{novaConsultaControle.consulta.animal}" >
+                    <f:selectItem itemValue="#{null}" itemLabel="Escolha um animal" 
+                                  noSelectionOption="false"/>
+                    <f:selectItems value="#{novaConsultaControle.listaAnimais}" 
+                                   var="anim"
+                                   itemValue="#{anim}"
+                                   itemLabel="#{anim.nome}"/>
+            </p:selectOneMenu>
+            
+            <p:commandButton value="Cancelar" styleClass="botao"
+                              action="menu" immediate="true"
+                             />
+            
+            <p:commandButton value="Cadastrar" 
+                             action="#{novaConsultaControle.inserir()}"
+                             update="@form" />
+            
+            <p:messages/>
+            
+           </h:form>
+           </h:panelGrid>
+    </h:body>
+              </ui:define>
+    </ui:composition>
+</html>

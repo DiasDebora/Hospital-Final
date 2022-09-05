@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Hospital Veterinário</title>
+    </h:head>
+    <h:body>
+        <h:panelGrid style="width: 100%; text-align: center;">
+            Novo Usuário
+        </h:panelGrid>
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <h:form >
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Login: " />
+                <p:inputText value="#{novoUsuarioControle.usuario.login}" />
+                <h:outputLabel value="Nome: " />
+                <p:inputText value="#{novoUsuarioControle.usuario.nome}"  />
+                <h:outputLabel value="Senha: " />
+                <p:password value="#{novoUsuarioControle.usuario.senha}"/>
+=======
+=======
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+        <h:form id="formNovo">
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Login: " />
+                <p:inputText value="#{novoUsuarioControle.usuario.login}" 
+                             required="true" requiredMessage="Login obrigatório">
+                    <p:ajax listener="#{novoUsuarioControle.verificar()}" 
+                            update="mensagens"/> 
+                </p:inputText>
+                <h:outputLabel value="Nome: " />
+                <p:inputText value="#{novoUsuarioControle.usuario.nome}" 
+                             required="true" requiredMessage="Nome obrigatório"/>
+                <h:outputLabel value="Senha: " />
+                <p:password value="#{novoUsuarioControle.usuario.senha}"
+                            required="true" requiredMessage="Senha obrigatória"/>
+<<<<<<< HEAD
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+=======
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+            </h:panelGrid>
+            <h:panelGrid columns="2">
+                <p:commandButton value="Cancelar" immediate="true"
+                                 action="menu"
+                                 />
+                <p:commandButton value="Gravar" 
+                                 action="#{novoUsuarioControle.inserir()}"
+                                 update="@form" />
+            </h:panelGrid>
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <p:messages showIcon="false" closable="true" />
+ 
+        </h:form>
+
+
+
+=======
+            <p:messages id="mensagens" showIcon="false" closable="true" />
+        </h:form>
+
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+=======
+            <p:messages id="mensagens" showIcon="false" closable="true" />
+        </h:form>
+
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+    </h:body>
+</html>

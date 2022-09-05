@@ -1,0 +1,43 @@
+body {
+    padding: 1%; 
+    margin: 20px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background-color: #FFC0CB !important;
+=======
+    background-color: #F8F8FF !important;
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+=======
+    background-color: #F8F8FF !important;
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+    font-size: 14px;
+}
+
+.botao{
+    color: #FFFF00  !important;
+}
+
+.botaoLink{
+    color: #00E !important;
+    border-bottom: 1px solid !important;
+}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+.link{
+    color: #00E !important;
+}
+
+<<<<<<< HEAD
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+=======
+>>>>>>> 73ebb0adc5a8d857450f95cde0c142adec861802
+.cabecalho{
+    background-color: #4682B4 !important;
+    height: 70px;  
+    width: 100%;
+}
+
